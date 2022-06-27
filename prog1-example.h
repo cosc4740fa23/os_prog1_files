@@ -26,7 +26,7 @@ using namespace std;
 template <class T>
 class QueueArray {
   public:
-    QueueArray(int sz = 10);
+    QueueArray(int);
     ~QueueArray();
     int Asize(); 
     T Dequeue();
@@ -44,7 +44,7 @@ class QueueArray {
 //Constructor for the queue array.  It sets the default size
 //to 10, initializes the private variables size and totalItems
 template <class T>
-QueueArray<T>::QueueArray(int sz) {
+QueueArray<T>::QueueArray(int sz):size(sz),totalItems(0) {
   size=sz;
   totalItems=0;
   array = new queue<T>[size];
